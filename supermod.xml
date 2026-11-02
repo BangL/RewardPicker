@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<mod name="Reward Picker"
+     description="Test helper: force or pick the mission end reward (weapon skin, customization, melee, xp, gold, card pack)."
+     author="BangL"
+     version="1.0.0"
+     min_sblt_version="2.4.0"
+     priority="900"
+     color="60 60 60">
+    <localization directory="loc">
+        <loc file="english.json" language="english" />
+        <loc file="german.json" language="german" />
+    </localization>
+    <updates>
+        <update identifier="rewardpicker">
+            <host meta="https://raw.githubusercontent.com/BangL/raid-mods-meta/main/rewardpicker.json" patchnotes="https://github.com/BangL/RewardPicker/blob/master/CHANGELOG.md"/>
+        </update>
+    </updates>
+    <hooks>
+        <pre hook_id="lib/entry" script_path="RewardPicker.lua" />
+        <post hook_id="lib/managers/menu/menucomponentmanager" script_path="Menu.lua" />
+        <post hook_id="lib/managers/lootdropmanager" script_path="LootDropManager.lua" />
+        <post hook_id="lib/managers/menu/raid_menu/lootscreengui" script_path="LootScreenGui.lua" />
+        <post hook_id="lib/managers/menu/menucomponentmanager" script_path="MenuComponentManager.lua" />
+    </hooks>
+</mod>
